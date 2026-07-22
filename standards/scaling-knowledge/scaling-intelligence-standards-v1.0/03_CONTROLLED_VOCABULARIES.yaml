@@ -1,0 +1,176 @@
+# ============================================================
+# SCALING INTELLIGENCE — CONTROLLED VOCABULARIES
+# Companion to Knowledge Standard v1.0.
+# Every term carries a lifecycle status: candidate | provisional | endorsed | deprecated (§5.1).
+# Only `endorsed` and `provisional` terms may be used for mandatory classification.
+# Adding/promoting a term is a governed act (§5.2) and, for capabilities, must update Capabilities.md in lockstep.
+# ============================================================
+
+vocabulary_version: "1.0"
+generated: 2026-07-13
+maintained_by: scaling-librarian
+
+# ---------- NODE TYPES (§9.2) ----------
+node_types:
+  knowledge:
+    - { term: knowledge-card,      prefix: KC, status: endorsed }
+    - { term: concept-page,        prefix: CP, status: endorsed }
+    - { term: heuristic-page,      prefix: HP, status: endorsed }
+    - { term: evidence-record,     prefix: ER, status: endorsed }
+    - { term: methodology-profile, prefix: MP, status: endorsed }
+    - { term: coaching-case,       prefix: CC, status: endorsed }
+    - { term: portfolio-summary,   prefix: PS, status: endorsed }
+    - { term: capability-definition, prefix: CD, status: endorsed }
+    - { term: insight-page,        prefix: IN, status: endorsed }
+    - { term: open-question,       prefix: OQ, status: endorsed }
+  entity:   # reserved; schemas deferred (§9)
+    - { term: person,              prefix: PER, status: provisional }
+    - { term: organization,        prefix: ORG, status: provisional }
+    - { term: project,             prefix: PRJ, status: provisional }
+    - { term: program,             prefix: PRG, status: provisional }
+    - { term: country,             prefix: CTY, status: provisional }
+    - { term: technology,          prefix: TEC, status: provisional }
+    - { term: innovation-package,  prefix: INP, status: provisional }
+    - { term: solution-track,      prefix: SLT, status: provisional }
+    - { term: scaling-partnership, prefix: SPN, status: provisional }
+
+# ---------- CAPABILITIES (§5.5; anchored to Capabilities.md) ----------
+capabilities:
+  pathway:
+    - { term: innovation-characterization, status: endorsed }
+    - { term: scaling-readiness,           status: endorsed }
+    - { term: scaling-strategy,            status: endorsed }
+    - { term: business-models,             status: endorsed }
+    - { term: delivery-systems,            status: endorsed }
+    - { term: last-mile-delivery,          status: endorsed }
+    - { term: partnerships,                status: endorsed }
+    - { term: institutionalization,        status: endorsed }
+    - { term: finance-readiness,           status: endorsed }
+    - { term: policy-engagement,           status: endorsed }
+  intelligence:
+    - { term: coaching,                    status: endorsed }
+    - { term: stage-gating,                status: endorsed }
+    - { term: portfolio-management,        status: endorsed }
+    - { term: adaptive-learning,           status: endorsed }
+    - { term: knowledge-management,        status: endorsed }
+    - { term: monitoring-and-learning,     status: endorsed }
+    - { term: evidence-synthesis,          status: endorsed }
+  cross_cutting:
+    - { term: responsible-scaling,         status: endorsed }
+    - { term: gender-and-social-inclusion, status: endorsed }
+  # candidate capabilities discovered by the Analyst are added here as `candidate`
+  # with a link to the proposing OQ/IN node, e.g.:
+  # - { term: market-systems-development, status: candidate, proposed_by: OQ-0007 }
+
+# ---------- STAGES (§5.5; anchored to Three_Stages.md) ----------
+stages:
+  - { term: proof-of-concept,     status: endorsed }
+  - { term: transition-to-scale,  status: endorsed }
+  - { term: scaling,              status: endorsed }
+  - { term: cross-stage,          status: endorsed }
+
+# ---------- SOURCE TYPES (§5.5) ----------
+source_types:
+  - { term: peer-reviewed,             status: endorsed, default_source_confidence: authoritative }
+  - { term: framework-or-methodology,  status: endorsed, default_source_confidence: established }
+  - { term: evaluation-or-review,      status: endorsed, default_source_confidence: established }
+  - { term: grey-literature,           status: endorsed, default_source_confidence: established }
+  - { term: case-study,                status: endorsed, default_source_confidence: provisional }
+  - { term: dataset,                   status: endorsed, default_source_confidence: established }
+  - { term: tool-or-template,          status: endorsed, default_source_confidence: provisional }
+  - { term: internal-document,         status: endorsed, default_source_confidence: provisional }
+  - { term: expert-input,              status: endorsed, default_source_confidence: provisional }
+  - { term: presentation,              status: endorsed, default_source_confidence: informal }
+  - { term: workshop-output,           status: endorsed, default_source_confidence: informal }
+  - { term: unpublished,               status: endorsed, default_source_confidence: unverified }
+
+# ---------- SOURCE CONFIDENCE (§7.1) — property of the source artifact ----------
+source_confidence_levels:
+  - { term: authoritative, status: endorsed, meaning: "Peer-reviewed or independently validated; recognized authority." }
+  - { term: established,   status: endorsed, meaning: "Formal, attributable, methodologically transparent." }
+  - { term: provisional,   status: endorsed, meaning: "Attributable but limited review or transparency." }
+  - { term: informal,      status: endorsed, meaning: "Limited traceability or single-voice." }
+  - { term: unverified,    status: endorsed, meaning: "Unpublished / anonymous / unattributable." }
+
+# ---------- EVIDENCE TYPES (§5.5) — property of a claim ----------
+evidence_types:
+  - { term: conceptual-argument,             status: endorsed }
+  - { term: methodological-design,           status: endorsed }
+  - { term: expert-judgment,                 status: endorsed }
+  - { term: participant-self-assessment,     status: endorsed }
+  - { term: monitoring-data,                 status: endorsed }
+  - { term: independently-validated-outcome, status: endorsed }
+  - { term: comparative-evidence,            status: endorsed }
+  - { term: portfolio-level-evidence,        status: endorsed }
+
+# ---------- EVIDENCE CONFIDENCE (§7.2) — Layer B nodes ONLY, never on a KC ----------
+evidence_confidence_levels:
+  - { term: well-supported,        status: endorsed }
+  - { term: moderately-supported,  status: endorsed }
+  - { term: emerging,              status: endorsed }
+  - { term: speculative,           status: endorsed }
+  - { term: insufficient-evidence, status: endorsed }
+
+# ---------- METHODOLOGY FAMILIES (§5.5; extensible) ----------
+methodology_families:
+  - { term: ipsr,                     status: endorsed }
+  - { term: scaling-scan,             status: endorsed }
+  - { term: aiccra-scaling-framework, status: endorsed }
+  - { term: genderup,                 status: endorsed }
+  - { term: responsible-scaling,      status: endorsed }
+  - { term: kohl-systems-approach,    status: endorsed }
+  - { term: paass,                    status: endorsed }
+  - { term: link-methodology,         status: endorsed }
+  - { term: general,                  status: endorsed }
+  - { term: none,                     status: endorsed }
+
+# ---------- EDGE TYPES (§6.2) ----------
+edge_types:
+  knowledge:
+    - { term: derived_from,          status: endorsed, inverse: has_derivative }
+    - { term: describes,             status: endorsed, inverse: described_by }
+    - { term: supports,              status: endorsed, inverse: supported_by }
+    - { term: contradicts,           status: endorsed, inverse: contradicted_by }
+    - { term: refines,               status: endorsed, inverse: refined_by }
+    - { term: relates_to,            status: endorsed, inverse: relates_to }
+    - { term: part_of,               status: endorsed, inverse: has_part }
+    - { term: supersedes,            status: endorsed, inverse: superseded_by }
+    - { term: cites,                 status: endorsed, inverse: cited_by }
+    - { term: applies_to_capability, status: endorsed, inverse: has_source }
+    - { term: applies_to_stage,      status: endorsed, inverse: has_source }
+  entity:  # provisional; used once entity nodes exist (§9)
+    - { term: authored_by,     status: provisional, inverse: authored }
+    - { term: affiliated_with, status: provisional, inverse: has_affiliate }
+    - { term: works_on,        status: provisional, inverse: worked_on_by }
+    - { term: operates_in,     status: provisional, inverse: hosts }
+    - { term: funded_by,       status: provisional, inverse: funds }
+    - { term: partners_with,   status: provisional, inverse: partners_with }
+    - { term: deploys,         status: provisional, inverse: deployed_by }
+    - { term: part_of_package, status: provisional, inverse: package_contains }
+
+# ---------- S4I AREAS OF WORK (§5.5) ----------
+areas_of_work:
+  - { term: aow1, status: endorsed }
+  - { term: aow2, status: endorsed }
+  - { term: aow3, status: endorsed }
+  - { term: aow4, status: endorsed }
+
+# ---------- GEOGRAPHY REGIONS (normalized; ISO 3166 codes also allowed) ----------
+regions:
+  - { term: global,     status: endorsed }
+  - { term: ssa,        status: endorsed, meaning: sub-Saharan Africa }
+  - { term: east-africa, status: endorsed }
+  - { term: west-africa, status: endorsed }
+  - { term: south-asia, status: endorsed }
+  - { term: southeast-asia, status: endorsed }
+  - { term: latam,      status: endorsed, meaning: Latin America & Caribbean }
+  - { term: mena,       status: endorsed, meaning: Middle East & North Africa }
+
+# ---------- SECTORS (extensible) ----------
+sectors:
+  - { term: agriculture, status: endorsed }
+  - { term: climate,     status: endorsed }
+  - { term: nutrition,   status: endorsed }
+  - { term: water,       status: endorsed }
+  - { term: livestock,   status: endorsed }
+  - { term: fisheries,   status: endorsed }

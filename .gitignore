@@ -1,0 +1,19 @@
+# macOS metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Microsoft Office temporary and lock files
+~$*
+
+# Common temporary files
+*.tmp
+*.temp
+*.swp
+*~
+
+# R session state and history
+.Rhistory
+.RData
+.Rproj.user/
